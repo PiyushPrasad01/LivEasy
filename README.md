@@ -78,29 +78,29 @@ LivEasy addresses this by offering:
 LivEasy/
 │
 ├── api/
-│   ├── login.php              # User authentication logic
-│   ├── signup.php             # New user registration handling
-│   ├── chatbot.php            # AI rental chatbot logic (NLP + keyword matching)
-│   ├── sentiment.php          # Review sentiment & aspect-based analysis
+│   ├── login.php              # Handles user authentication (login/logout)
+│   ├── signup.php             # Manages new user registration & validation
+│   ├── chatbot.php            # AI-powered rental chatbot (NLP + keyword matching)
+│   ├── sentiment.php          # Review sentiment & aspect-based analysis API
 │
 ├── css/
-│   └── styles.css             # Global styling & responsiveness
+│   └── styles.css             # Global styling, layouts & responsive design
 │
 ├── js/
-│   ├── chatbot.js             # Frontend chatbot interactions
-│   ├── filters.js             # Property filtering logic
-│   └── dashboard.js           # Dashboard interactivity
+│   ├── chatbot.js             # Frontend logic for AI chatbot interactions
+│   ├── filters.js             # Property search & filtering functionality
+│   └── dashboard.js           # User dashboard interactivity & state handling
 │
 ├── img/
-│   ├── properties/            # Property image carousels
-│   └── assets/                # Icons and UI assets
+│   ├── properties/            # Property images and carousels
+│   └── assets/                # Icons, logos, and UI assets
 │
 ├── includes/
-│   ├── header.php              # Navigation header
-│   ├── footer.php              # Footer component
-│   └── db.php                  # Database connection logic
+│   ├── header.php             # Reusable navigation header
+│   ├── footer.php             # Reusable footer component
+│   └── db.php                 # Centralized database connection logic
 │
-├── index.php                   # Landing page with AI chatbot
-├── property_detail.php         # Property page with AI commute & sentiment widgets
-├── dashboard.php               # User profile & saved listings
-└── README.md                   # Documentation
+├── index.php                  # Landing page with AI rental chatbot
+├── property_detail.php        # Property details with AI commute & sentiment widgets
+├── dashboard.php              # User profile, saved listings & preferences
+└── README.md                  # Project documentation
