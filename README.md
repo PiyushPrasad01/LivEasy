@@ -66,11 +66,9 @@ LivEasy addresses this by offering:
 
 | Layer | Technology |
 |------|-----------|
-| Backend | PHP 8.x |
+| Backend | PHP  |
 | Database | MySQL |
-| Frontend | HTML5, CSS3, Bootstrap 4, JavaScript (ES6+) |
-| AI / Logic | Custom NLP Logic, Keyword Matching |
-| UI Assets | FontAwesome, Custom SVGs |
+| Frontend | HTML5, CSS3, Bootstrap, JavaScript |
 
 ---
 
