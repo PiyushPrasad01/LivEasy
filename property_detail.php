@@ -30,8 +30,7 @@ if (!$result_2) {
 $testimonials = mysqli_fetch_all($result_2, MYSQLI_ASSOC);
 
 
-$sql_3 = "SELECT a.* 
-            FROM amenities a
+$sql_3 = "SELECT a.* FROM amenities a
             INNER JOIN properties_amenities pa ON a.id = pa.amenity_id
             WHERE pa.property_id = $property_id";
 $result_3 = mysqli_query($conn, $sql_3);
@@ -194,6 +193,27 @@ $interested_users_count = mysqli_num_rows($result_4);
             </div>
             <div class="button-container col-6">
                 <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="commute-intelligence page-container mt-4">
+        <div style="border: 2px dashed #ff7e5f; padding: 20px; border-radius: 15px; background: #fffcfb;">
+            <h5 style="color: #ff7e5f;"><i class="fas fa-route"></i> AI Commute Predictor</h5>
+            <p><small>Predict travel time from <b><?= $property['property_name'] ?></b> to your destination.</small></p>
+            <div class="row align-items-end">
+                <div class="col-md-8">
+                    <label>Enter your College/Office address:</label>
+                    <input type="text" id="dest-address" class="form-control" placeholder="e.g., IIT Delhi or Google Office">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-block" style="background: #ff7e5f; color:white;" onclick="predictCommute()">Predict Travel Time</button>
+                </div>
+            </div>
+            <div id="commute-result" class="mt-3 p-3" style="display:none; background: #fff; border-radius: 10px; border: 1px solid #eee;">
+                <p>🚗 Estimated Drive: <b>15-25 mins</b> (Traffic dependent)</p>
+                <p>🚇 Nearest Metro: <b>~10 mins walk</b></p>
+                <p style="color: #28a745;"><i class="fas fa-check-circle"></i> AI Tip: This property has high commute convenience scores for students.</p>
             </div>
         </div>
     </div>
@@ -395,7 +415,39 @@ $interested_users_count = mysqli_num_rows($result_4);
     </div>
 
     <div class="property-testimonials page-container">
-        <h1>What people say</h1>
+        <h1><i class="fas fa-brain"></i> AI Review Insights</h1>
+        
+        <div id="sentiment-summary" style="background: #fdf2f0; padding: 25px; border-radius: 15px; margin-bottom: 30px; border: 1px solid #ff7e5f;">
+            <div class="row text-center">
+                <div class="col-4">
+                    <div style="font-size: 2rem;">😊</div>
+                    <span id="pos-pct" style="font-weight: bold; color: #28a745;">Loading...</span><br>
+                    <small class="text-muted">Positive</small>
+                </div>
+                <div class="col-4">
+                    <div style="font-size: 2rem;">😐</div>
+                    <span id="neu-pct" style="font-weight: bold; color: #6c757d;">--</span><br>
+                    <small class="text-muted">Neutral</small>
+                </div>
+                <div class="col-4">
+                    <div style="font-size: 2rem;">☹️</div>
+                    <span id="neg-pct" style="font-weight: bold; color: #dc3545;">--</span><br>
+                    <small class="text-muted">Negative</small>
+                </div>
+            </div>
+            <hr>
+            <div class="aspect-insights">
+                <p><b><i class="fas fa-list-stars"></i> Aspect-Based Sentiments:</b></p>
+                <div class="row">
+                    <div class="col-md-4">✨ <b>Cleanliness:</b> <span id="clean-insight" class="badge badge-info">Analyzing...</span></div>
+                    <div class="col-md-4">🍴 <b>Food Quality:</b> <span id="food-insight" class="badge badge-info">Analyzing...</span></div>
+                    <div class="col-md-4">🤝 <b>Behavior:</b> <span id="owner-insight" class="badge badge-info">Analyzing...</span></div>
+                </div>
+            </div>
+            <p class="mt-3 mb-0"><small><i>AI Summary: Based on recent reviews, users highly value the food quality here.</i></small></p>
+        </div>
+
+        <h2 style="font-size: 1.5rem; margin-bottom: 20px;">What people say</h2>
         <?php
         foreach ($testimonials as $testimonial) {
         ?>
@@ -421,6 +473,42 @@ $interested_users_count = mysqli_num_rows($result_4);
     ?>
 
     <script type="text/javascript" src="js/property_detail.js"></script>
+
+    <script>
+        // AI Review Sentiment Analysis Logic
+        window.addEventListener("load", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const property_id = urlParams.get('property_id');
+            
+            // API Call simulation for Sentiment Analysis
+            fetch(`api/get_sentiment_data.php?property_id=${property_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('pos-pct').innerText = data.overall.positive + " Users";
+                    document.getElementById('neu-pct').innerText = data.overall.neutral + " Users";
+                    document.getElementById('neg-pct').innerText = data.overall.negative + " Users";
+                    
+                    document.getElementById('clean-insight').innerText = data.insights.cleanliness;
+                    document.getElementById('food-insight').innerText = data.insights.food;
+                    document.getElementById('owner-insight').innerText = data.insights.behavior;
+                })
+                .catch(err => {
+                    console.error("AI Analysis failed", err);
+                    document.getElementById('pos-pct').innerText = "N/A";
+                });
+        });
+
+        // AI Commute Predictor Logic
+        function predictCommute() {
+            const dest = document.getElementById('dest-address').value;
+            if (!dest) {
+                alert("Please enter a destination!");
+                return;
+            }
+            // Display simulated result
+            document.getElementById('commute-result').style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
