@@ -74,35 +74,6 @@ LivEasy addresses this by offering:
 
 ---
 
-## 📂 Project Structure
-LivEasy/
-│
-├── api/
-│   ├── login.php              # Handles user authentication (login/logout)
-│   ├── signup.php             # Manages new user registration & validation
-│   ├── chatbot.php            # AI-powered rental chatbot (NLP + keyword matching)
-│   ├── sentiment.php          # Review sentiment & aspect-based analysis API
-│
-├── css/
-│   └── styles.css             # Global styling, layouts & responsive design
-│
-├── js/
-│   ├── chatbot.js             # Frontend logic for AI chatbot interactions
-│   ├── filters.js             # Property search & filtering functionality
-│   └── dashboard.js           # User dashboard interactivity & state handling
-│
-├── img/
-│   ├── properties/            # Property images and carousels
-│   └── assets/                # Icons, logos, and UI assets
-│
-├── includes/
-│   ├── header.php             # Reusable navigation header
-│   ├── footer.php             # Reusable footer component
-│   └── db.php                 # Centralized database connection logic
-│
-├── index.php                  # Landing page with AI rental chatbot
-├── property_detail.php        # Property details with AI commute & sentiment widgets
-├── dashboard.php              # User profile, saved listings & preferences
-└── README.md                  # Project documentation
+
 
 
