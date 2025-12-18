@@ -1,58 +1,38 @@
-# LIVEASY 🌟
-A one-stop solution for discovering and renting living spaces with ease.
+# LivEasy: AI-Powered Rental Discovery Platform
 
----
-
-## 📌 About the Project
-**LIVEASY** is a user-friendly web application designed to simplify the process of finding and renting **PGs, rooms, flats, and houses**.  
-The platform allows users to explore listings based on city and amenities while ensuring secure access through authentication.
-
-This project focuses on improving the rental discovery experience for students and working professionals.
+**LivEasy** (internally referred to as **PG Life**) is a comprehensive web-based solution designed to simplify the search for living spaces like PGs, flats, and rooms. By integrating modern web technologies with AI-driven features, it provides a seamless and personalized experience for students and working professionals.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **Secure Authentication**  
-  User registration and login with encrypted passwords and secure session management.
+### 🤖 AI-Driven Intelligence
+* **AI Rental Chatbot**: A natural language conversational interface on the home page that helps users find properties based on specific requirements like budget, location, and amenities.
+* **Review Sentiment Analysis**: Automatically categorizes user testimonials into Positive, Neutral, or Negative sentiments and provides aspect-based insights for Cleanliness, Food, and Behavior.
+* **AI Commute Predictor**: Predicts travel times from a property to a user's specific destination (college or office) and provides convenience tips directly on the property page.
 
-- 🌍 **City-based Listings**  
-  Browse and filter living spaces based on selected cities.
-
-- 🏠 **Amenity-based Search**  
-  Filter listings by Wi-Fi, meals, parking, and other essential amenities.
-
-- 📱 **Responsive Design**  
-  Optimized for desktops, tablets, and mobile devices.
-
-- 🖥️ **Session Management**  
-  Secure PHP session handling for authenticated users.
+### 🏠 Core Functionalities
+* **Property Discovery**: Search and filter properties by city (Delhi, Mumbai, Bengaluru, Hyderabad) and amenities.
+* **Secure Authentication**: User registration and login with encrypted passwords (SHA-1) and session management.
+* **Personalized Dashboard**: Users can track "interested" properties and manage their profiles in a dedicated space.
+* **Responsive Design**: A fully optimized UI for seamless browsing across desktops, tablets, and mobile devices.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|----------|---------|
-| **PHP** | Backend logic and session management |
-| **HTML** | Structuring web pages |
-| **CSS** | Responsive and aesthetic UI styling |
-| **JavaScript** | Client-side interactivity |
-| **DBMS** | Storage for user data and listings |
-
-
----
-
-## 🌐 Live Demo
-🔗 **LIVEASY (Live Project):** _Coming Soon_
+| Component | Technology |
+| :--- | :--- |
+| **Backend** | PHP  |
+| **Database** | MySQL |
+| **Frontend** | HTML5, CSS3, Bootstrap, JavaScript |
+| **AI/Logic** | Custom NLP Logic & Keyword Matching |
+| **Icons** | FontAwesome & Custom SVGs |
 
 ---
 
 ## 🚀 Getting Started
 
-Follow these steps to run the project locally:
-
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/username/liveasy.git
-
+git clone [https://github.com/piyushprasad01/liveasy.git](https://github.com/piyushprasad01/liveasy.git)
