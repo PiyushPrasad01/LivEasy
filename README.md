@@ -104,3 +104,5 @@ LivEasy/
 ├── property_detail.php        # Property details with AI commute & sentiment widgets
 ├── dashboard.php              # User profile, saved listings & preferences
 └── README.md                  # Project documentation
+
+
