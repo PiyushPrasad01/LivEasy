@@ -1,6 +1,6 @@
 # 🏠 LivEasy — AI-Powered Rental Discovery Platform
 
-**LivEasy** (internally referred to as **PG Life**) is a smart, AI-powered web platform that simplifies the process of discovering **PGs, flats, and rental rooms** for students and working professionals.  
+**LivEasy** is a smart, AI-powered web platform that simplifies the process of discovering **PGs, flats, and rental rooms** for students and working professionals.  
 It solves major pain points of traditional rental platforms by combining **intelligent search, conversational AI, trust signals, and commute insights**.
 
 ---
